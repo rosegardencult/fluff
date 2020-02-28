@@ -1,0 +1,17 @@
+[package]
+name = "fluff"
+version = "0.1.0"
+authors = ["juniper wilde <juniper.r.wilde@gmail.com>"]
+description = "input for warmth"
+license = "MIT"
+keywords = ["warmth"]
+homepage = "https://github.com/rosegardencult/fluff"
+repository = "https://github.com/rosegardencult/fluff"
+readme = "README.md"
+edition = "2018"
+
+[dependencies]
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["staticlib"]
