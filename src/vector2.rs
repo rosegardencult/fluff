@@ -3,14 +3,19 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Fluff Math Library root entry point
+// Two point vector representation
 //
 //===----------------------------------------------------------------------===//
 
-// Vector representations
-mod vector2;
-pub use self::vector2::Vector2;
-mod vector3;
-pub use self::vector3::Vector3;
-mod vector4;
-pub use self::vector4::Vector4;
+use std::fmt;
+
+pub struct Vector2 {
+  pub x: f32,
+  pub y: f32,
+}
+
+impl fmt::Display for Vector2 {
+  fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    return write!(f, "Vector2 - [x:{0}, y:{1}]", self.x, self.y);
+  }
+}

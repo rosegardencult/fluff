@@ -3,14 +3,10 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Fluff Math Library root entry point
+// Fluff Math Library root test point
 //
 //===----------------------------------------------------------------------===//
 
-// Vector representations
-mod vector2;
-pub use self::vector2::Vector2;
-mod vector3;
-pub use self::vector3::Vector3;
-mod vector4;
-pub use self::vector4::Vector4;
+extern crate fluff;
+
+mod vectors;
