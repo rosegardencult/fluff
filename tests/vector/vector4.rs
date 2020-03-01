@@ -3,20 +3,19 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Three point vector representation
+// Vector4 test point
 //
 //===----------------------------------------------------------------------===//
 
-use std::fmt;
+use fluff::Vector4;
 
-pub struct Vector3 {
-  pub x: f32,
-  pub y: f32,
-  pub z: f32,
-}
-
-impl fmt::Display for Vector3 {
-  fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-    return write!(f, "Vector3 - [x:{0}, y:{1}, z:{2}]", self.x, self.y, self.z);
-  }
+#[test]
+fn to_string() {
+  let v = Vector4 {
+    x: 1,
+    y: 2,
+    z: 3,
+    w: 4,
+  };
+  assert_eq!("Vector4 - [x:1, y:2, z:3, w:4]", v.to_string());
 }

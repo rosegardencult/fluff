@@ -8,9 +8,7 @@
 //===----------------------------------------------------------------------===//
 
 // Vector representations
-mod vector2;
-pub use self::vector2::Vector2;
-mod vector3;
-pub use self::vector3::Vector3;
-mod vector4;
-pub use self::vector4::Vector4;
+mod vector;
+pub use self::vector::vector2::Vector2;
+pub use self::vector::vector3::Vector3;
+pub use self::vector::vector4::Vector4;

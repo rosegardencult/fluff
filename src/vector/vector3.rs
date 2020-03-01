@@ -3,25 +3,20 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Four point vector representation
+// Three point vector representation
 //
 //===----------------------------------------------------------------------===//
 
 use std::fmt;
 
-pub struct Vector4 {
-  pub x: f32,
-  pub y: f32,
-  pub z: f32,
-  pub w: f32,
+pub struct Vector3 {
+  pub x: i32,
+  pub y: i32,
+  pub z: i32,
 }
 
-impl fmt::Display for Vector4 {
+impl fmt::Display for Vector3 {
   fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-    return write!(
-      f,
-      "Vector4 - [x:{0}, y:{1}, z:{2}, w:{3}]",
-      self.x, self.y, self.z, self.w
-    );
+    return write!(f, "Vector3 - [x:{0}, y:{1}, z:{2}]", self.x, self.y, self.z);
   }
 }

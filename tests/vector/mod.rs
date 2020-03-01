@@ -3,10 +3,10 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Fluff Math Library root test point
+// Vector test point
 //
 //===----------------------------------------------------------------------===//
 
-extern crate fluff;
-
-mod vector;
+pub mod vector2;
+pub mod vector3;
+pub mod vector4;

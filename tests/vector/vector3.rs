@@ -3,10 +3,18 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Fluff Math Library root test point
+// Vector3 test point
 //
 //===----------------------------------------------------------------------===//
 
-extern crate fluff;
+use fluff::Vector3;
 
-mod vector;
+#[test]
+fn to_string() {
+  let v = Vector3 {
+    x: 3,
+    y: 2,
+    z: 1,
+  };
+  assert_eq!("Vector3 - [x:3, y:2, z:1]", v.to_string());
+}

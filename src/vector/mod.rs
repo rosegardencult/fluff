@@ -3,10 +3,19 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Fluff Math Library root test point
+// Vector representation entry point
 //
 //===----------------------------------------------------------------------===//
 
-extern crate fluff;
+pub mod vector2;
+pub mod vector3;
+pub mod vector4;
 
-mod vector;
+pub trait Base {
+  // Get length of vector from sqrt(x^2 + y^2 + ...)
+  fn length(&self) -> i32;
+
+  // Add Base to Vector2
+  // Add Base to Vector3
+  // Add Base to Vector
+}
