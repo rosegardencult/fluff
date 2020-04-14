@@ -16,5 +16,5 @@ fn to_string() {
     y: 2,
     z: 1,
   };
-  assert_eq!("Vector3 - [x:3, y:2, z:1]", v.to_string());
+  assert_eq!("Vector3 - (x:3, y:2, z:1)", v.to_string());
 }

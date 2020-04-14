@@ -7,8 +7,10 @@
 //
 //===----------------------------------------------------------------------===//
 
+#![doc(issue_tracker_base_url = "https://github.com/rosegardencult/fluff/issues/")]
+
 // Vector representations
-mod vector;
+pub mod vector;
 pub use self::vector::vector2::Vector2;
 pub use self::vector::vector3::Vector3;
 pub use self::vector::vector4::Vector4;

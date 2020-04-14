@@ -7,15 +7,27 @@
 //
 //===----------------------------------------------------------------------===//
 
+use std::ops::*;
+
 pub mod vector2;
 pub mod vector3;
 pub mod vector4;
 
-pub trait Base {
-  // Get length of vector from sqrt(x^2 + y^2 + ...)
-  fn length(&self) -> i32;
+// TODO: Vector of ints?
+// TODO: Restrict T to just numeric types
+// TODO: Remove requirement of x and y being the same type
 
-  // Add Base to Vector2
-  // Add Base to Vector3
-  // Add Base to Vector
+pub trait Base<U> {
+  // Get length of vector by computing sqrt(x^2 + y^2 + ...)
+  fn magnitude(&self) -> U;
+
+  // Shrink vector to have magnitude of 1
+  fn normalize(&mut self) -> Self;
+
+  //
+  fn dot(&self) {}
 }
+
+pub trait Component: Add + Sub + Mul + Copy + Neg + num::Float {} // num::Num?
+
+impl<T> Component for T where T: Add + Sub + Mul + Copy + Neg + num::Float {}

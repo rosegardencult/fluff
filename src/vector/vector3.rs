@@ -17,6 +17,11 @@ pub struct Vector3 {
 
 impl fmt::Display for Vector3 {
   fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-    return write!(f, "Vector3 - [x:{0}, y:{1}, z:{2}]", self.x, self.y, self.z);
+    return write!(f, "Vector3 - (x:{0}, y:{1}, z:{2})", self.x, self.y, self.z);
   }
+}
+
+impl Vector3 {
+  //
+  fn cross(&self) {}
 }

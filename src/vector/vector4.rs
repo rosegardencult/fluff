@@ -20,7 +20,7 @@ impl fmt::Display for Vector4 {
   fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
     return write!(
       f,
-      "Vector4 - [x:{0}, y:{1}, z:{2}, w:{3}]",
+      "Vector4 - (x:{0}, y:{1}, z:{2}, w:{3})",
       self.x, self.y, self.z, self.w
     );
   }
