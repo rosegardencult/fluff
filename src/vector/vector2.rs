@@ -1,5 +1,8 @@
 // Copyright (c) 2020 rose garden cult All rights reserved.
-// See https://rosegardencult.com/licenses for license information.
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //
 //===----------------------------------------------------------------------===//
 //
@@ -27,7 +30,7 @@ impl<T: Component + fmt::Display> fmt::Display for Vector2<T> {
   }
 }
 
-impl<T: Component + num::Float> Base<T> for Vector2<T> {
+impl<T: Component> Base<T> for Vector2<T> {
   #[doc = "Return the magnitude of the vector, sqrt(x^2 + y^2)"]
   fn magnitude(&self) -> T {
     return (self.x * self.x + self.y * self.y).sqrt();

@@ -1,5 +1,8 @@
 // Copyright (c) 2020 rose garden cult All rights reserved.
-// See https://rosegardencult.com/licenses for license information.
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //
 //===----------------------------------------------------------------------===//
 //
@@ -93,6 +96,13 @@ fn get_magnitude() {
 }
 
 #[test]
+fn get_magnitude_zero_vector() {
+  let a = Vector2 { x: 0.0, y: 0.0 };
+
+  assert_eq!(a.magnitude(), 0.0);
+}
+
+#[test]
 fn get_normalize() {
   let a = Vector2::normalize(&mut Vector2 { x: 3.0, y: 1.0 });
 
@@ -102,5 +112,5 @@ fn get_normalize() {
   assert!(a.x < 0.94869);
   assert!(a.x > 0.94868);
   assert!(a.y < 0.72548);
-  assert!(a.x > 0.72547);
+  assert!(a.y > 0.72547);
 }
