@@ -106,11 +106,11 @@ fn get_magnitude_zero_vector() {
 fn get_normalize() {
   let a = Vector2::normalize(&mut Vector2 { x: 3.0, y: 1.0 });
 
-  // a.normalize() should be { 0.94868, 0.72547 }
+  // a.normalize() should be { 0.94868, 0.31622 }
   // we test x and y to be within 0.00001 of the correct answer because
   // floating point math doesn't need to be any more precise for us
   assert!(a.x < 0.94869);
-  assert!(a.x > 0.94868);
-  assert!(a.y < 0.72548);
-  assert!(a.y > 0.72547);
+  assert!(a.x > 0.94867);
+  assert!(a.y < 0.31623);
+  assert!(a.y > 0.31621);
 }

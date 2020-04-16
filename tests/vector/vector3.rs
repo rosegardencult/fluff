@@ -100,7 +100,7 @@ fn add_vector3() {
     Vector3 {
       x: 3.0,
       y: 3.0,
-      z: 3.0
+      z: 3.0,
     },
     a + b
   );
@@ -123,7 +123,7 @@ fn sub_vector3() {
     Vector3 {
       x: -1.0,
       y: -1.0,
-      z: -1.0
+      z: -1.0,
     },
     a - b
   );
@@ -141,7 +141,7 @@ fn inverse_positive() {
     Vector3 {
       x: -1.0,
       y: -1.0,
-      z: -1.0
+      z: -1.0,
     },
     -a
   );
@@ -159,7 +159,7 @@ fn inverse_negative() {
     Vector3 {
       x: 1.0,
       y: 1.0,
-      z: 1.0
+      z: 1.0,
     },
     -a
   );
@@ -177,7 +177,7 @@ fn multiply_by_scalar() {
     Vector3 {
       x: 20.0,
       y: 20.0,
-      z: 20.0
+      z: 20.0,
     },
     a * 5.0
   );
@@ -195,7 +195,7 @@ fn divide_by_scalar() {
     Vector3 {
       x: 4.0,
       y: 4.0,
-      z: 4.0
+      z: 4.0,
     },
     a / 5.0
   );
@@ -229,21 +229,19 @@ fn get_magnitude_zero_vector() {
 
 #[test]
 fn get_normalize() {
-  let a = Vector3 {
-    x: 3.0 / num::Float::sqrt(3.0 * 3.0 + 1.0 * 1.0 + -1.0 * -1.0),
-    y: 1.0 / num::Float::sqrt(3.0 * 3.0 + 1.0 * 1.0 + -1.0 * -1.0),
-    z: -1.0 / num::Float::sqrt(3.0 * 3.0 + 1.0 * 1.0 + -1.0 * -1.0),
-  };
+  let a = Vector3::normalize(&mut Vector3 {
+    x: 3.0,
+    y: 1.0,
+    z: -1.0,
+  });
 
   // a.normalize() should be { 0.90453, 0.30151, -0.30151 }
   // we test x and y to be within 0.00001 of the correct answer because
   // floating point math doesn't need to be any more precise for us
   assert!(a.x < 0.90454);
   assert!(a.x > 0.90452);
-  assert_eq!(a.y, 0.30151);
   assert!(a.y < 0.30152);
   assert!(a.y > 0.30150);
-  assert_eq!(a.z, 0.30151);
-  assert!(a.z < 0.30152);
-  assert!(a.z > 0.30150);
+  assert!(a.z < -0.30150);
+  assert!(a.z > -0.30152);
 }

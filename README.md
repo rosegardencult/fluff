@@ -1,1 +1,1 @@
-# fluff mathematics
+# fluff game mathematics

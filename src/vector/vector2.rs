@@ -38,8 +38,7 @@ impl<T: Component> Base<T> for Vector2<T> {
 
   #[doc = "Shrink vector to have magnitude of 1"]
   fn normalize(&mut self) -> Vector2<T> {
-    self.x = self.x / self.magnitude();
-    self.y = self.y / self.magnitude();
+    *self = *self / self.magnitude();
     return *self;
   }
 }
