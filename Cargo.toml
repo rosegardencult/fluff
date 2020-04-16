@@ -3,7 +3,7 @@ name = "fluff"
 version = "0.1.0"
 authors = ["juniper wilde <juniper.r.wilde@gmail.com>"]
 description = "input for warmth"
-license = "MIT"
+license = "MPL-2.0"
 keywords = ["warmth"]
 homepage = "https://github.com/rosegardencult/fluff"
 repository = "https://github.com/rosegardencult/fluff"
@@ -11,7 +11,8 @@ readme = "README.md"
 edition = "2018"
 
 [dependencies]
+num = "0.2.1"
 
 [lib]
 path = "src/lib.rs"
-crate-type = ["staticlib"]
+crate-type = ["lib", "staticlib"]

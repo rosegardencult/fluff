@@ -6,14 +6,10 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Fluff Math Library root entry point
+// Vector test point
 //
 //===----------------------------------------------------------------------===//
 
-#![doc(issue_tracker_base_url = "https://github.com/rosegardencult/fluff/issues/")]
-
-// Vector representations
-pub mod vector;
-pub use self::vector::vector2::Vector2;
-pub use self::vector::vector3::Vector3;
-pub use self::vector::vector4::Vector4;
+pub mod vector2;
+pub mod vector3;
+pub mod vector4;
