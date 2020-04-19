@@ -1,8 +1,8 @@
 [package]
 name = "fluff"
-version = "0.1.0"
-authors = ["juniper wilde <juniper.r.wilde@gmail.com>"]
-description = "input for warmth"
+version = "0.1.1"
+authors = ["june wilde <jewilde@rosegardencult.com>"]
+description = "mathematics for warmth"
 license = "MPL-2.0"
 keywords = ["warmth"]
 homepage = "https://github.com/rosegardencult/fluff"
