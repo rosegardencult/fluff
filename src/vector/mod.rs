@@ -10,14 +10,9 @@
 //
 //===----------------------------------------------------------------------===//
 
-use std::ops::*;
-
 pub mod vector2;
 pub mod vector3;
 pub mod vector4;
-
-// TODO: Vector of ints? and then remove requirement of x and y being the same type
-// TODO: Restrict T to just numeric types
 
 pub trait Base<U> {
   // Get length of vector by computing sqrt(x^2 + y^2 + ...)
@@ -29,7 +24,3 @@ pub trait Base<U> {
   // Get dot product of vector and another vector by computing (x * rhs.x + y * rhs.y + ... )
   fn dot(&self, rhs: Self) -> U;
 }
-
-pub trait Component: Add + Sub + Mul + Copy + Neg + num::Float {} // num::Num?
-
-impl<T> Component for T where T: Add + Sub + Mul + Copy + Neg + num::Float {}

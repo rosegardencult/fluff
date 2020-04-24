@@ -6,11 +6,19 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Fluff Math Library root test point
+// Three by three matrix representation
 //
 //===----------------------------------------------------------------------===//
 
-extern crate fluff;
+use crate::matrix::Base;
+use crate::Component;
 
-mod vector;
-mod matrix;
+use std::fmt;
+use std::ops::*;
+
+#[doc = "A 3x3 matrix"]
+#[doc = "derives traits: Default, Debug, PartialEq, Eq, Copy, Clone, Hash"]
+#[derive(Default, Debug, PartialEq, Eq, Copy, Clone, Hash)]
+pub struct Matrix3<T: Component> {
+  pub x: T,
+}

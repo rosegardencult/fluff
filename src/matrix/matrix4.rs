@@ -6,11 +6,19 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Fluff Math Library root test point
+// Four by Four matrix representation
 //
 //===----------------------------------------------------------------------===//
 
-extern crate fluff;
+use crate::matrix::Base;
+use crate::Component;
 
-mod vector;
-mod matrix;
+use std::fmt;
+use std::ops::*;
+
+#[doc = "A 4x4 matrix"]
+#[doc = "derives traits: Default, Debug, PartialEq, Eq, Copy, Clone, Hash"]
+#[derive(Default, Debug, PartialEq, Eq, Copy, Clone, Hash)]
+pub struct Matrix4<T: Component> {
+  pub x: T,
+}

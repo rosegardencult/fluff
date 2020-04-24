@@ -6,11 +6,10 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Fluff Math Library root test point
+// Matrix test point
 //
 //===----------------------------------------------------------------------===//
 
-extern crate fluff;
-
-mod vector;
-mod matrix;
+pub mod matrix2;
+pub mod matrix3;
+pub mod matrix4;

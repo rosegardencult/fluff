@@ -6,11 +6,13 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Fluff Math Library root test point
+// Matrix representation entry point
 //
 //===----------------------------------------------------------------------===//
 
-extern crate fluff;
+pub mod matrix2;
+pub mod matrix3;
+pub mod matrix4;
 
-mod vector;
-mod matrix;
+pub trait Base<U> {
+}
