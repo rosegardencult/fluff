@@ -6,21 +6,19 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// Vector representation entry point
+// Three component point representation
 //
 //===----------------------------------------------------------------------===//
 
-pub mod vector2;
-pub mod vector3;
-pub mod vector4;
+use crate::point::Base;
+use crate::Component;
 
-pub trait Base<U> {
-  // Get length of vector by computing sqrt(x^2 + y^2 + ...)
-  fn magnitude(&self) -> U;
+use std::fmt;
+use std::ops::*;
 
-  // Shrink vector to have magnitude of 1
-  fn normalize(&mut self) -> Self;
-
-  // Get dot product of vector and another vector by computing (x * rhs.x + y * rhs.y + ... )
-  fn dot(&self, rhs: Self) -> U;
+#[doc = "A point with x and y components"]
+#[doc = "derives traits: Default, Debug, PartialEq, Eq, Copy, Clone, Hash"]
+#[derive(Default, Debug, PartialEq, Eq, Copy, Clone, Hash)]
+pub struct Point3<T: Component> {
+  pub x: T,
 }
