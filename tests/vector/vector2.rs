@@ -114,3 +114,11 @@ fn get_normalize() {
   assert!(a.y < 0.31623);
   assert!(a.y > 0.31621);
 }
+
+#[test]
+fn get_dot_product() {
+  let a = Vector2 { x: 1.0, y: 2.0 };
+  let b = Vector2 { x: 2.0, y: 3.0 };
+
+  assert_eq!(a.dot(b), 8.0);
+}

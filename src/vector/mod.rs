@@ -26,8 +26,8 @@ pub trait Base<U> {
   // Shrink vector to have magnitude of 1
   fn normalize(&mut self) -> Self;
 
-  //
-  fn dot(&self) {}
+  // Get dot product of vector and another vector by computing (x * rhs.x + y * rhs.y + ... )
+  fn dot(&self, rhs: Self) -> U;
 }
 
 pub trait Component: Add + Sub + Mul + Copy + Neg + num::Float {} // num::Num?

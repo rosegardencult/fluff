@@ -24,12 +24,6 @@ pub struct Vector2<T: Component> {
   pub y: T,
 }
 
-impl<T: Component + fmt::Display> fmt::Display for Vector2<T> {
-  fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-    return write!(f, "Vector2 - (x:{0}, y:{1})", self.x, self.y);
-  }
-}
-
 impl<T: Component> Base<T> for Vector2<T> {
   #[doc = "Return the magnitude of the vector, sqrt(x^2 + y^2)"]
   fn magnitude(&self) -> T {
@@ -40,6 +34,17 @@ impl<T: Component> Base<T> for Vector2<T> {
   fn normalize(&mut self) -> Vector2<T> {
     *self = *self / self.magnitude();
     return *self;
+  }
+
+  #[doc = "Return dot product of the vector and another Vector2"]
+  fn dot(&self, rhs: Vector2<T>) -> T {
+    return self.x * rhs.x + self.y * rhs.y;
+  }
+}
+
+impl<T: Component + fmt::Display> fmt::Display for Vector2<T> {
+  fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    return write!(f, "Vector2 - (x:{0}, y:{1})", self.x, self.y);
   }
 }
 
