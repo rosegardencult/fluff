@@ -245,3 +245,50 @@ fn get_normalize() {
   assert!(a.z < -0.30150);
   assert!(a.z > -0.30152);
 }
+
+#[test]
+fn get_dot_product() {
+  let a = Vector3 {
+    x: 1.0,
+    y: 2.0,
+    z: 3.0,
+  };
+  let b = Vector3 {
+    x: 2.0,
+    y: 3.0,
+    z: 4.0,
+  };
+
+  assert_eq!(a.dot(b), 20.0);
+}
+
+#[test]
+fn get_cross_product() {
+  let a = Vector3 {
+    x: 1.0,
+    y: 2.0,
+    z: 3.0,
+  };
+  let b = Vector3 {
+    x: 2.0,
+    y: 3.0,
+    z: 4.0,
+  };
+
+  assert_eq!(
+    a.cross(b),
+    Vector3 {
+      x: -1.0,
+      y: 2.0,
+      z: -1.0
+    }
+  );
+  assert_eq!(
+    b.cross(a),
+    Vector3 {
+      x: 1.0,
+      y: -2.0,
+      z: 1.0
+    }
+  );
+}

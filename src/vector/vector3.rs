@@ -25,9 +25,14 @@ pub struct Vector3<T: Component> {
   pub z: T,
 }
 
-impl<T: Component + fmt::Display> fmt::Display for Vector3<T> {
-  fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-    return write!(f, "Vector3 - (x:{0}, y:{1}, z:{2})", self.x, self.y, self.z);
+impl<T: Component> Vector3<T> {
+  #[doc = "Return cross product of the vector and another Vector3"]
+  pub fn cross(&self, rhs: Vector3<T>) -> Vector3<T> {
+    return Vector3::<T> {
+      x: self.y * rhs.z - self.z * rhs.y,
+      y: self.z * rhs.x - self.x * rhs.z,
+      z: self.x * rhs.y - self.y * rhs.x,
+    };
   }
 }
 
@@ -41,6 +46,17 @@ impl<T: Component> Base<T> for Vector3<T> {
   fn normalize(&mut self) -> Vector3<T> {
     *self = *self / self.magnitude();
     return *self;
+  }
+
+  #[doc = "Return dot product of the vector and another Vector3"]
+  fn dot(&self, rhs: Vector3<T>) -> T {
+    return self.x * rhs.x + self.y * rhs.y + self.z * rhs.z;
+  }
+}
+
+impl<T: Component + fmt::Display> fmt::Display for Vector3<T> {
+  fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    return write!(f, "Vector3 - (x:{0}, y:{1}, z:{2})", self.x, self.y, self.z);
   }
 }
 
