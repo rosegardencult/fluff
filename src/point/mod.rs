@@ -13,6 +13,3 @@
 pub mod point2;
 pub mod point3;
 pub mod point4;
-
-pub trait Base<U> {
-}
