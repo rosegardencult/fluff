@@ -12,4 +12,5 @@
 
 extern crate fluff;
 
+mod point;
 mod vector;

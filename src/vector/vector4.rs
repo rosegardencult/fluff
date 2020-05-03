@@ -11,7 +11,7 @@
 //===----------------------------------------------------------------------===//
 
 use crate::vector::Base;
-use crate::vector::Component;
+use crate::Component;
 
 use std::fmt;
 use std::ops::*;
