@@ -12,6 +12,8 @@
 
 #![doc(issue_tracker_base_url = "https://github.com/rosegardencult/fluff/issues/")]
 
+#![allow(clippy::needless_return)]
+
 use std::ops::*;
 
 // TODO: Component of ints? and then remove requirement of components in a
